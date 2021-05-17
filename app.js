@@ -74,3 +74,80 @@ alert(`Hello, ${name}!`); // Hello, John!
 // embed an expression
 alert(`the result is ${1 + 2}`); // the result is 3
 alert("the result is ${1 + 2}"); // the result is ${1 + 2} (double quotes do nothing)
+
+// Boolean (logical type)
+// The boolean type has only two values: true and false.
+// This type is commonly used to store yes/no values: true means “yes, correct”, and false means “no, incorrect”.
+
+let nameFieldChecked = true; // yes, name field is checked
+let ageFieldChecked = false; // no, age field is not checked
+
+// Boolean values also come as a result of comparisons:
+
+let isGreater = 4 > 1;
+alert(isGreater); // true (the comparison result is "yes")
+
+// The “null” value
+// The special null value does not belong to any of the types described above.
+// It forms a separate type of its own which contains only the null value:
+let age = null;
+
+// In JavaScript, null is not a “reference to a non-existing object” or a “null pointer” like in some other languages.
+// It’s just a special value which represents “nothing”, “empty” or “value unknown”.
+// The code above states that age is unknown.
+
+// The “undefined” value
+// The special value undefined also stands apart. It makes a type of its own, just like null.
+// The meaning of undefined is “value is not assigned”.
+// If a variable is declared, but not assigned, then its value is undefined:
+
+let age;
+alert(age); // shows "undefined"
+
+// Technically, it is possible to explicitly assign undefined to a variable:
+
+let age = 100;
+
+// change the value to undefined
+age = undefined;
+alert(age); // "undefined"
+
+// The typeof operator
+
+// The typeof operator returns the type of the argument. It’s useful when we want to process values of different types differently or just want to do a quick check.
+// It supports two forms of syntax:
+// As an operator: typeof x.
+// As a function: typeof(x).
+// In other words, it works with parentheses or without them. The result is the same.
+// The call to typeof x returns a string with the type name:
+
+typeof undefined // "undefined"
+
+typeof 0 // "number"
+
+typeof 10 n // "bigint"
+
+typeof true // "boolean"
+
+typeof "foo" // "string"
+
+typeof Symbol("id") // "symbol"
+
+typeof Math // "object"  (1)
+
+typeof null // "object"  (2)
+
+typeof alert // "function"  (3)
+
+
+// Summary
+// There are 8 basic data types in JavaScript.
+
+// number for numbers of any kind: integer or floating-point, integers are limited by ±(253-1).
+// bigint is for integer numbers of arbitrary length.
+// string for strings. A string may have zero or more characters, there’s no separate single-character type.
+// boolean for true/false.
+// null for unknown values – a standalone type that has a single value null.
+// undefined for unassigned values – a standalone type that has a single value undefined.
+// object for more complex data structures.
+// symbol for unique identifiers.
