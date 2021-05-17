@@ -50,3 +50,27 @@ myBirthday = '01.01.2001'; // error, can't reassign the constant!
 // Variables should be named in a way that allows us to easily understand what’s inside them.
 
 // Data types
+
+// The number type represents both integer and floating point numbers.
+// There are many operations for numbers, e.g. multiplication *, division /, addition +, subtraction -, and so on.
+
+
+// String
+// A string in JavaScript must be surrounded by quotes.
+
+let str = "Hello";
+let str2 = 'Single quotes are ok too';
+let phrase = `can embed another ${str}`;
+
+// In JavaScript, there are 3 types of quotes.
+// Double quotes: "Hello".
+// Single quotes: 'Hello'.
+// Backticks: `Hello`.
+// Double and single quotes are “simple” quotes. There’s practically no difference between them in JavaScript.
+
+let name = "John";
+// embed a variable
+alert(`Hello, ${name}!`); // Hello, John!
+// embed an expression
+alert(`the result is ${1 + 2}`); // the result is 3
+alert("the result is ${1 + 2}"); // the result is ${1 + 2} (double quotes do nothing)
