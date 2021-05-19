@@ -329,3 +329,51 @@ alert(counter); // 3
 let counter = 2;
 counter--; // works the same as counter = counter - 1, but is shorter
 alert(counter); // 1
+
+// Comparisons
+// Greater/less than: a > b, a < b.
+// Greater/less than or equals: a >= b, a <= b.
+// Equals: a == b, please note the double equality sign == means the equality test, while a single one a = b means an assignment.
+// Not equals. In maths the notation is ≠, but in JavaScript it’s written as a != b.
+// Boolean is the result
+// All comparison operators return a boolean value:
+
+// true – means “yes”, “correct” or “the truth”.
+// false – means “no”, “wrong” or “not the truth”.
+alert(2 > 1); // true (correct)
+alert(2 == 1); // false (wrong)
+alert(2 != 1); // true (correct)
+
+let result = 5 > 4; // assign the result of the comparison
+alert(result); // true
+
+
+// String comparison
+// To see whether a string is greater than another, JavaScript uses the so-called “dictionary” or “lexicographical” order.
+
+// alert( 'Z' > 'A' ); // true
+// alert( 'Glow' > 'Glee' ); // true
+// alert( 'Bee' > 'Be' ); // true
+
+// Comparison of different types
+// When comparing values of different types, JavaScript converts the values to numbers.
+
+alert('2' > 1); // true, string '2' becomes a number 2
+alert('01' == 1); // true, string '01' becomes a number 1
+
+// Strict equality
+// A regular equality check == has a problem. It cannot differentiate 0 from false:
+
+alert(0 == false); // true
+alert('' == false); // true
+
+// This happens because operands of different types are converted to numbers by the equality operator ==. An empty string, just like false, becomes a zero.
+// What to do if we’d like to differentiate 0 from false?
+// A strict equality operator === checks the equality without type conversion.
+
+
+// Summary
+// Comparison operators return a boolean value.
+// Strings are compared letter-by-letter in the “dictionary” order.
+// When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
+// The values null and undefined equal == each other and do not equal any other value.
