@@ -140,7 +140,8 @@ typeof null // "object"  (2)
 typeof alert // "function"  (3)
 
 
-// Summary
+// 
+Summary
 // There are 8 basic data types in JavaScript.
 
 // number for numbers of any kind: integer or floating-point, integers are limited by ±(253-1).
@@ -151,3 +152,25 @@ typeof alert // "function"  (3)
 // undefined for unassigned values – a standalone type that has a single value undefined.
 // object for more complex data structures.
 // symbol for unique identifiers.
+
+
+// alert
+// This one we’ve seen already. It shows a message and waits for the user to press “OK”.
+
+alert("Hello");
+
+// prompt
+// The function prompt accepts two arguments:
+// The call to prompt returns the text from the input field or null if the input was canceled.
+
+let age = prompt('How old are you?', 25);
+
+alert(`You are ${age} years old!`); // You are 25 years old!
+
+// confirm
+// The function confirm shows a modal window with a question and two buttons: OK and Cancel.
+// The result is true if OK is pressed and false otherwise.
+
+let isBoss = confirm("Are you the boss?");
+
+alert(isBoss); // true if OK is pressed
