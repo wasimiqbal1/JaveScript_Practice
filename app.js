@@ -223,3 +223,109 @@ alert(Boolean(0)); // false
 
 alert(Boolean("hello")); // true
 alert(Boolean("")); // false
+
+// Basic operators, maths
+// Terms: “unary”, “binary”, “operand”
+// An operand – is what operators are applied to. For instance, in the multiplication of 5 * 2 there are two operands: the left operand is 5 and the right operand is 2. Sometimes, people call these “arguments” instead of “operands”.
+
+let x = 1;
+
+x = -x;
+alert(x); // -1, unary negation was applied
+
+
+// An operator is binary if it has two operands. The same minus exists in binary form as well:
+let x = 1,
+    y = 3;
+alert(y - x); // 2, binary minus subtracts values
+
+// Maths
+// The following math operations are supported:
+// Addition +,
+// Subtraction -,
+// Multiplication *,
+// Division /,
+// Remainder %,
+// Exponentiation **.
+
+// Remainder %
+// The remainder operator %, despite its appearance, is not related to percents.
+
+alert(5 % 2); // 1, a remainder of 5 divided by 2
+alert(8 % 3); // 2, a remainder of 8 divided by 3
+
+Exponentiation **
+    The exponentiation operator a ** b raises a to the power of b.
+alert(2 ** 2); // 2² = 4
+alert(2 ** 3); // 2³ = 8
+alert(2 ** 4); // 2⁴ = 16
+
+// String concatenation with binary +
+// Let’s meet features of JavaScript operators that are beyond school arithmetics.
+let s = "my" + "string";
+alert(s); // mystring
+alert('1' + 2); // "12"
+alert(2 + '1'); // "21"
+
+
+// Numeric conversion, unary +
+// The plus + exists in two forms: the binary form that we used above and the unary form.
+
+// The unary plus or, in other words, the plus operator + applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
+// No effect on numbers
+let x = 1;
+alert(+x); // 1
+
+let y = -2;
+alert(+y); // -2
+
+// Converts non-numbers
+alert(+true); // 1
+alert(+""); // 0
+
+// The need to convert strings to numbers arises very often. For example, if we are getting values from HTML form fields, they are usually strings. What if we want to sum them?
+
+
+let apples = "2";
+let oranges = "3";
+
+alert(apples + oranges); // "23", the binary plus concatenates strings
+
+
+// Operator precedence
+// If an expression has more than one operator, the execution order is defined by their 
+// precedence, or, in other words, the default priority order of operators.
+
+let n = 2;
+n += 5; // now n = 7 (same as n = n + 5)
+n *= 2; // now n = 14 (same as n = n * 2)
+
+alert(n); // 14
+
+// Short “modify-and-assign” operators exist for all arithmetical and bitwise operators: /=, -=, etc.
+
+let n = 2;
+
+n *= 3 + 5;
+
+alert(n); // 16  (right part evaluated first, same as n *= 8)
+
+// Increment/decrement
+// Increasing or decreasing a number by one is among the most common numerical operations.
+
+// Increment ++ increases a variable by 1:
+let counter
+let a = 1,
+    b = 1;
+
+let c = ++a; // ?
+let d = b++; // ?
+= 2;
+counter++; // works the same as counter = counter + 1, but is shorter
+alert(counter); // 3
+
+// Decrement -- decreases a variable by 1:
+
+let counter = 2;
+counter--; // works the same as counter = counter - 1, but is shorter
+alert(counter); // 1
