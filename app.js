@@ -377,3 +377,58 @@ alert('' == false); // true
 // Strings are compared letter-by-letter in the “dictionary” order.
 // When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
 // The values null and undefined equal == each other and do not equal any other value.
+
+// Conditional branching: if,
+
+// The “if” statement
+// The if(...) statement evaluates a condition in parentheses and, if the result is true, executes a block of code.
+
+let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+if (year == 2015) {
+    alert("That's correct!");
+    alert("You're so smart!");
+}
+
+// Boolean conversion
+// The if (…) statement evaluates the expression in its parentheses and converts the result to a boolean.
+
+// A number 0, an empty string "", null, undefined, and NaN all become false. Because of that they are called “falsy” values.
+// Other values become true, so they are called “truthy”.
+
+// The “else” clause
+// The if statement may contain an optional “else” block. It executes when the condition is falsy.
+
+let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+if (year == 2015) {
+    alert('You guessed it right!');
+} else {
+    alert('How can you be so wrong?'); // any value except 2015
+}
+
+// Several conditions: “else if”
+// Sometimes, we’d like to test several variants of a condition. The else if clause lets us do that.
+
+let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+if (year < 2015) {
+    alert('Too early...');
+} else if (year > 2015) {
+    alert('Too late');
+} else {
+    alert('Exactly!');
+}
+
+// Conditional operator ‘?’
+// Sometimes, we need to assign a variable depending on a condition.
+
+let accessAllowed;
+let age = prompt('How old are you?', '');
+
+if (age > 18) {
+    accessAllowed = true;
+} else {
+    accessAllowed = false;
+}
+
+alert(accessAllowed);
