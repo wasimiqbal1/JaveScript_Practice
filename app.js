@@ -432,3 +432,57 @@ if (age > 18) {
 }
 
 alert(accessAllowed);
+
+// Logical operators
+// There are four logical operators in JavaScript: || (OR), && (AND), ! (NOT), ?? (Nullish Coalescing). Here we cover the first three
+
+// || (OR)
+// The “OR” operator is represented with two vertical line symbols:
+
+// There are four possible logical combinations:
+// alert(true || true); // true
+// alert(false || true); // true
+// alert(true || false); // true
+// alert(false || false); // false
+
+let hour = 12;
+let isWeekend = true;
+
+if (hour < 10 || hour > 18 || isWeekend) {
+    alert('The office is closed.'); // it is the weekend
+}
+
+
+// && (AND)
+// The AND operator is represented with two ampersands &&:
+
+// alert( true && true );   // true
+// alert( false && true );  // false
+// alert( true && false );  // false
+// alert( false && false ); // false
+
+let hour = 12;
+let minute = 30;
+
+if (hour == 12 && minute == 30) {
+    alert('The time is 12:30');
+}
+// Just as with OR, any value is allowed as an operand of AND:
+
+if (1 && 0) { // evaluated as true && false
+    alert("won't work, because the result is falsy");
+}
+
+// !(NOT)
+// The boolean NOT operator is represented with an exclamation sign!.
+
+alert(!true); // false
+alert(!0); // true
+
+// A double NOT !! is sometimes used for converting a value to boolean type:
+
+alert(!!"non-empty string"); // true
+alert(!!null); // false
+
+alert(Boolean("non-empty string")); // true
+alert(Boolean(null)); // false
