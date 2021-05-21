@@ -486,3 +486,22 @@ alert(!!null); // false
 
 alert(Boolean("non-empty string")); // true
 alert(Boolean(null)); // false
+
+// Loops: while and for
+
+// The “while” loop
+// The while loop has the following syntax:
+
+while (condition) {
+    // code
+    // so-called "loop body"
+}
+
+// While the condition is truthy, the code from the loop body is executed.
+// For instance, the loop below outputs i while i < 3:
+
+let i = 0;
+while (i < 3) { // shows 0, then 1, then 2
+    alert(i);
+    i++;
+}
