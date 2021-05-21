@@ -540,3 +540,19 @@ for (begin; condition; step) {
 for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
     alert(i);
 }
+
+// Labels for break/continue
+// Sometimes we need to break out from multiple nested loops at once.
+
+// For example, in the code below we loop over i and j, prompting for the coordinates (i, j) from (0,0) to (2,2):
+for (let i = 0; i < 3; i++) {
+
+    for (let j = 0; j < 3; j++) {
+
+        let input = prompt(`Value at coords (${i},${j})`, '');
+
+        // what if we want to exit from here to Done (below)?
+    }
+}
+
+alert('Done!');
