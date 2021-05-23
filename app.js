@@ -751,3 +751,18 @@ showMessage(from, "Hello"); // *Ann*: Hello
 
 // the value of "from" is the same, the function modified a local copy
 alert(from); // Ann
+
+// Default values
+// If a parameter is not provided, then its value becomes undefined.
+// For instance, the aforementioned function showMessage(from, text) can be called with a single argument:
+
+showMessage("Ann");
+
+// That’s not an error. Such a call would output "*Ann*: undefined". There’s no text, so it’s assumed that text === undefined.
+// If we want to use a “default” text in this case, then we can specify it after =:
+
+function showMessage(from, text = "no text given") {
+    alert(from + ": " + text);
+}
+
+showMessage("Ann"); // Ann: no text given
