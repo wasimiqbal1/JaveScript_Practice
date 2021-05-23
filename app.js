@@ -646,3 +646,81 @@ if (browser == 'Edge') {
 } else {
     alert('We hope that this page looks ok!');
 }
+
+// Functions
+
+// Quite often we need to perform a similar action in many places of the script.
+
+// Functions are the main “building blocks” of the program. They allow the code to be called many times without repetition.
+// We’ve already seen examples of built-in functions, like alert(message), prompt(message, default) and confirm(question). But we can create functions of our own as well.
+
+// Function Declaration
+// To create a function we can use a function declaration.
+
+function showMessage() {
+    alert('Hello everyone!');
+}
+
+// The function keyword goes first, then goes the name of the function, 
+// then a list of parameters between the parentheses (comma-separated, empty in the example above) 
+// and finally the code of the function, also named “the function body”, between curly braces.
+
+// Our new function can be called by its name: showMessage().
+
+function showMessage() {
+    alert('Hello everyone!');
+}
+
+showMessage();
+showMessage();
+
+// The call showMessage() executes the code of the function. Here we will see the message two times.
+// This example clearly demonstrates one of the main purposes of functions: to avoid code duplication.
+
+// Local variables
+
+// A variable declared inside a function is only visible inside that function.
+
+// For example:
+
+function showMessage() {
+    let message = "Hello, I'm JavaScript!"; // local variable
+
+    alert(message);
+}
+
+showMessage(); // Hello, I'm JavaScript!
+alert(message); // <-- Error! The variable is local to the function
+
+// Outer variables
+// A function can access an outer variable as well, for example:
+let userName = 'John';
+
+function showMessage() {
+    let message = 'Hello, ' + userName;
+    alert(message);
+}
+
+showMessage(); // Hello, John
+
+// The function has full access to the outer variable. It can modify it as well.
+
+let userName = 'John';
+
+function showMessage() {
+    userName = "Bob"; // (1) changed the outer variable
+
+    let message = 'Hello, ' + userName;
+    alert(message);
+}
+
+alert(userName); // John before the function call
+
+showMessage();
+
+alert(userName); // Bob, the value was modified by the function
+
+// Global variables
+// Variables declared outside of any function, such as the outer userName in the code above, are called global.
+// Global variables are visible from any function (unless shadowed by locals).
+// It’s a good practice to minimize the use of global variables. Modern code has few or no globals. Most variables reside in their functions. Sometimes though, they can be useful to store project-level data.
