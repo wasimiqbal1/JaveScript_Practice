@@ -766,3 +766,78 @@ function showMessage(from, text = "no text given") {
 }
 
 showMessage("Ann"); // Ann: no text given
+
+// Now if the text parameter is not passed, it will get the value "no text given"
+// Here "no text given" is a string, but it can be a more complex expression, which is only evaluated and assigned if the parameter is missing. So, this is also possible:
+
+function showMessage(from, text = anotherFunction()) {
+    // anotherFunction() only executed if no text given
+    // its result becomes the value of text
+}
+
+// Evaluation of default parameters
+// In JavaScript, a default parameter is evaluated every time the function is called without the respective parameter.
+// In the example above, anotherFunction() is called every time showMessage() is called without the text parameter.
+
+// Alternative default parameters
+// Sometimes it makes sense to set default values for parameters not in the function declaration, but at a later stage, during its execution.
+// To check for an omitted parameter, we can compare it with undefined:
+
+function showMessage(text) {
+    if (text === undefined) {
+        text = 'empty message';
+    }
+
+    alert(text);
+}
+
+showMessage(); // empty message
+
+// …Or we could use the || operator:
+
+// if text parameter is omitted or "" is passed, set it to 'empty'
+function showMessage(text) {
+    text = text || 'empty';
+    ...
+}
+
+// Returning a value
+// A function can return a value back into the calling code as the result.
+// The simplest example would be a function that sums two values:
+
+function sum(a, b) {
+    return a + b;
+}
+
+let result = sum(1, 2);
+alert(result); // 3
+
+// The directive return can be in any place of the function. When the execution reaches it, the function stops, and the value is returned to the calling code (assigned to result above).
+// There may be many occurrences of return in a single function. For instance:
+
+function checkAge(age) {
+    if (age >= 18) {
+        return true;
+    } else {
+        return confirm('Do you have permission from your parents?');
+    }
+}
+
+let age = prompt('How old are you?', 18);
+
+if (checkAge(age)) {
+    alert('Access granted');
+} else {
+    alert('Access denied');
+}
+
+// It is possible to use return without a value. That causes the function to exit immediately.
+
+function showMovie(age) {
+    if (!checkAge(age)) {
+        return;
+    }
+
+    alert("Showing you the movie"); // (*)
+    // ...
+}
