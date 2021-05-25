@@ -841,3 +841,21 @@ function showMovie(age) {
     alert("Showing you the movie"); // (*)
     // ...
 }
+
+// A function with an empty return or without it returns undefined
+
+// If a function does not return a value, it is the same as if it returns undefined:
+
+
+
+function doNothing() { /* empty */ }
+
+alert(doNothing() === undefined); // true
+
+// An empty return is also the same as return undefined:
+
+function doNothing() {
+    return;
+}
+
+alert(doNothing() === undefined); // true
