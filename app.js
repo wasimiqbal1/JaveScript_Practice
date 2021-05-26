@@ -919,3 +919,96 @@ function isPrime(n) {
 
 // The second variant is easier to understand, isn’t it? Instead of the code piece we see a name of the action (isPrime). Sometimes people refer to such code as self-describing.
 // So, functions can be created even if we don’t intend to reuse them. They structure the code and make it readable.
+
+function checkAge(age) {
+    if (age > 18) {
+        return true;
+    } else {
+        // ...
+        return confirm('Did parents allow you?');
+    }
+}
+
+// Function expressions
+// In JavaScript, a function is not a “magical language structure”, but a special kind of value.
+// The syntax that we used before is called a Function Declaration:
+
+function sayHi() {
+    alert("Hello");
+}
+
+// There is another syntax for creating a function that is called a Function Expression.
+
+let sayHi = function() {
+    alert("Hello");
+};
+
+// Here, the function is created and assigned to the variable explicitly, like any other value. No matter how the function is defined, it’s just a value stored in the variable sayHi.
+// The meaning of these code samples is the same: "create a function and put it into the variable sayHi".
+// We can even print out that value using alert:
+
+function sayHi() {
+    alert("Hello");
+}
+
+alert(sayHi); // shows the function code
+
+// In JavaScript, a function is a value, so we can deal with it as a value. The code above shows its string representation, which is the source code.
+// Surely, a function is a special value, in the sense that we can call it like sayHi().
+// But it’s still a value. So we can work with it like with other kinds of values.
+// We can copy a function to another variable:
+
+
+function sayHi() { // (1) create
+    alert("Hello");
+}
+
+let func = sayHi; // (2) copy
+
+func(); // Hello     // (3) run the copy (it works)!
+sayHi(); // Hello    //     this still works too (why wouldn't it)
+
+// Callback functions
+
+// Let’s look at more examples of passing functions as values and using function expressions.
+// We’ll write a function ask(question, yes, no) with three parameters:
+
+// question
+// Text of the question
+// yes
+// Function to run if the answer is “Yes”
+// no
+// Function to run if the answer is “No”
+// The function should ask the question and, depending on the user’s answer, call yes() or no():
+
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+}
+
+function showOk() {
+    alert("You agreed.");
+}
+
+function showCancel() {
+    alert("You canceled the execution.");
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+// ask("Do you agree?", showOk, showCancel);
+
+// The idea is that we pass a function and expect it to be “called back” later if necessary. In our case, showOk becomes the callback for “yes” answer, and showCancel for “no” answer.
+// We can use Function Expressions to write the same function much shorter:
+
+
+
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+}
+
+ask(
+    "Do you agree?",
+    function() { alert("You agreed."); },
+    function() { alert("You canceled the execution."); }
+);
