@@ -1033,3 +1033,6 @@ let sum = function(a, b) {
 
 // The more subtle difference is when a function is created by the JavaScript engine.
 // A Function Expression is created when the execution reaches it and is usable only from that moment.
+
+// Arrow functions, the basics
+// There’s another very simple and concise syntax for creating functions, that’s often better than Function Expressions.
